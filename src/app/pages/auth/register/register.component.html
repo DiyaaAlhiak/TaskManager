@@ -1,0 +1,95 @@
+<div class="login-page">
+  <div class="overlay">
+    <div class="login-box card shadow p-4">
+      <h2 class="text-center mb-2 text-white"> انشاء حساب</h2>
+      <form  [formGroup]="registerForm"  (ngSubmit)="onSubmit()">
+
+<div class="row">
+
+     <div class="col-md-6 mb-2">
+          <label class="form-label text-white"> الاسم الاول</label>
+          <input type="text" class="form-control" formControlName="firstName">
+          <div class="text-danger" *ngIf="submitted && registerForm.get('firstName')?.errors?.['required']">
+           الاسم الاول مطلوب
+          </div>
+     </div>
+
+     <div class="col-md-6 mb-2">
+          <label class="form-label text-white"> الاسم الثاني</label>
+          <input type="text" class="form-control" formControlName="lastName">
+          <div class="text-danger"  *ngIf="submitted && registerForm.get('lastName')?.errors?.['required']">
+           الاسم الثاني مطلوب
+          </div>
+     </div>
+
+        <div class=" col-md-6 mb-2">
+          <label class="form-label text-white">البريد الإلكتروني</label>
+          <input type="email" class="form-control" formControlName="email">
+          <div class="text-danger" *ngIf="submitted && registerForm.get('email')?.errors?.['required']">
+            البريد الإلكتروني مطلوب
+          </div>
+
+          <div class="text-danger" *ngIf="submitted && registerForm.get('firstName')?.errors?.['required']">
+            البريد الإلكتروني غير صالح
+          </div>
+        </div>
+
+          <div class="col-md-6 mb-2">
+          <label class="form-label text-white"> رقم الموبايل </label>
+          <input type="number" class="form-control" maxlength="10" formControlName="mobileNumber">
+          <div class="text-danger" *ngIf="submitted && registerForm.get('mobileNumber')?.errors?.['required']">
+            رقم الموبايل  مطلوب
+          </div>
+         </div>
+
+<div class="col-md-6 mb-2">
+  <label>نوع المستخدم</label>
+  <select formControlName="role">
+    <option value="user">مستخدم</option>
+    <option value="admin">مدير</option>
+  </select>
+  <div class="text-danger" *ngIf="submitted && registerForm.get('role')?.errors">
+    نوع المستخدم مطلوب
+  </div>
+</div>
+
+
+
+     <div class=" col-md-6 mb-3 mb-2">
+          <label class="form-label text-white">كلمة المرور</label>
+          <input type="password" class="form-control" formControlName="password">
+
+       <div class="text-danger"  *ngIf="submitted && registerForm.get('password')?.errors?.['required']" >
+        كلمة المرور مطلوبة
+      </div>
+        </div>
+  <!-- <div class=" col-md-6 mb-3 mb-2">
+          <label class="form-label text-white"> تاكيد كلمت المرور</label>
+          <input type="password" class="form-control" formControlName="confirmPassword">
+
+       <div class="text-danger"  *ngIf="submitted && registerForm.get('confirmPassword')?.errors?.['required']" >
+        كلمة المرور مطلوبة
+      </div>
+        </div> -->
+</div>
+
+
+
+        <button type="submit" class="btn btn-submit w-100 mt-3" >انشاء حساب </button>
+        <!-- <p class="d-flex  justify-content-center mt-3"> لدي حساب  <a href=""  routerLink="/login"> تسجيل الدخول</a>  </p> -->
+
+      </form>
+    </div>
+    <div class="swit-alert-error-message alert alert-danger mt-2 "  [class.fade-out]="fadeOut" *ngIf="errorMessage">
+      <p>
+        {{errorMessage}}
+      </p>
+    </div>
+
+    <div class="swit-alert-scss-message alert alert-danger mt-2 "  [class.fade-out]="fadeOut" *ngIf="successMessage">
+      <p>
+       {{successMessage}}
+      </p>
+    </div>
+  </div>
+</div>

@@ -15,4 +15,8 @@ return this.http.get<any[]>(`${this.apiUrl}?email=${email}&password=${password}`
 )
   }
 
+
+    registerUser(userData: any) {
+    return this.http.post(this.apiUrl, userData);
+  }
 }

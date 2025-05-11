@@ -11,20 +11,21 @@
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
-  border-radius: 10px;
+  // border-radius: 10px;
 
   width: 100%;
-  height: 100vh;
+  height: 106.5vh;
 }
 
 .login-box {
-  width: 100%;
-  max-width: 400px;
+  width: 70%;
+  // max-width: 400px;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(2px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
   margin: 3rem auto ;
+  // height: 90vh;
 }
 .btn-submit{
   background: #251e57;
@@ -64,12 +65,19 @@
 }
 
 .swit-alert-error-message {
-  background-color: #f34728;
+  background-color: #f34728; /* أحمر فاتح */
   border: 1px solid #f34728;
 }
 
 .swit-alert-scss-message{
-  background-color: #3e367b;
+  background-color: #3e367b; /* أحمر فاتح */
   border: 1px solid #3e367b;
 
+}
+select {
+  width: 100%;
+  padding: 0.4rem;
+  margin: 0.5rem 0 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
