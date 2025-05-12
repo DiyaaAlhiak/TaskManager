@@ -1,1 +1,90 @@
-<p>home works!</p>
+<header class="header">
+    <div class="logo">TaskManager</div>
+    <nav>
+      <ul>
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#">المهام</a></li>
+        <li><a href="#">الإعدادات</a></li>
+        <li><a href="#">الملف الشخصي</a></li>
+        <li><a href="#">تسجيل الخروج</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#">المهام اليومية</a></li>
+      <li><a href="#">المهام القادمة</a></li>
+      <li><a href="#">المهام المكتملة</a></li>
+      <li><a href="#">إضافة مهمة جديدة</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Section -->
+  <main class="main-content">
+    <!-- إحصائيات المهام مع أنميشن -->
+    <div class="task-stats">
+      <h2>إحصائيات المهام</h2>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-circle">
+            <div class="stat-text">المهام المكتملة</div>
+            <div class="circle" data-percent="60"></div>
+          </div>
+          <p>60%</p>
+        </div>
+        <div class="stat">
+          <div class="stat-circle">
+            <div class="stat-text">المهام المعلقة</div>
+            <div class="circle" data-percent="30"></div>
+          </div>
+          <p>30%</p>
+        </div>
+        <div class="stat">
+          <div class="stat-circle">
+            <div class="stat-text">المهام القادمة</div>
+            <div class="circle" data-percent="10"></div>
+          </div>
+          <p>10%</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- جدول المهام -->
+    <div class="task-table">
+      <h2>قائمة المهام</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>المهمة</th>
+            <th>التاريخ</th>
+            <th>الحالة</th>
+            <th>الإجراءات</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>مهمة 1</td>
+            <td>12/05/2025</td>
+            <td>قيد الإنجاز</td>
+            <td>
+              <button class="edit-btn">تعديل</button>
+              <button class="delete-btn">حذف</button>
+            </td>
+          </tr>
+          <tr>
+            <td>مهمة 2</td>
+            <td>13/05/2025</td>
+            <td>مكتمل</td>
+            <td>
+              <button class="edit-btn">تعديل</button>
+              <button class="delete-btn">حذف</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button class="add-task-btn">إضافة مهمة جديدة</button>
+  </main>
