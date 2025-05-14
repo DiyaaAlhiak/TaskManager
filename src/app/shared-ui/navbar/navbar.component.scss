@@ -1,0 +1,121 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: #3e367b;
+  color: white;
+  padding: 15px;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  direction: rtl;
+}
+
+/* ✅ تنسيق الشعار */
+.logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo h2 {
+  font-size: 20px;
+  color: #fff;
+  margin: 0;
+}
+
+/* ✅ الباقي كما هو */
+.sidebar-header {
+  width: 100%;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ecf0f1;
+}
+
+.user-name {
+  font-weight: bold;
+  // flex: 1;
+}
+
+.arrow {
+  font-size: 14px;
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+  background-color: #34495e;
+  border-radius: 4px;
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.sidebar-header:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  border-bottom: 1px solid #3e367b;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #3b5871;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  // margin-top: auto;
+  width: 100%;
+}
+
+.nav-links li {
+  margin-bottom: 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+}
+
+.nav-links a:hover {
+  background-color: #1abc9c;
+}
