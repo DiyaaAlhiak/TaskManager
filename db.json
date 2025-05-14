@@ -71,6 +71,16 @@
       "mobileNumber": 975743453464,
       "password": "1234567890",
       "role": "admin"
+    },
+    {
+      "id": "cb6a776f-b6a4-4529-a4ad-d7ef52d05199",
+      "firstName": "انا ",
+      "lastName": "انا ",
+      "email": "ana@gmail.com",
+      "mobileNumber": 394876894576,
+      "password": "123456",
+      "role": "admin",
+      "token": "96227bfe-2298-4865-ae22-4b8a9298fb3b"
     }
   ]
 }
