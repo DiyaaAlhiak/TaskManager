@@ -31,9 +31,8 @@ onSubmit() {
 
   this.authService.login(email!, password!).subscribe(user => {
     if (user) {
-      localStorage.setItem('userRole', user.role);
-       localStorage.setItem('token', user.token);
-      this.router.navigate(['/home'])
+   localStorage.setItem('user', JSON.stringify(user));
+      this.router.navigate(['/admin/home'])
 this.ScssMessage = 'تم تسجيل الدخول بنجاح';
 
 setTimeout(() => {
