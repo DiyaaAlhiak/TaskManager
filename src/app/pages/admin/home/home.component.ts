@@ -1,26 +1,29 @@
 import { Component } from '@angular/core';
-import { AuthService,User } from '../../../shared/services/auth.service';
+import { AuthService,Task } from '../../../shared/services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-users: User[] = [];
+  task: Task[] = [];
 constructor(private _AuthService: AuthService){}
 
 
 
   ngOnInit(): void {
+    // this.task
     this.getAllUsers(1);
   }
 
   getAllUsers(id: number): void {
-    this._AuthService.getUsers(id).subscribe(users => {
-      this.users = users;
+    this._AuthService.getTask(id).subscribe(res => {
+      this.task = res;
+      console.log(this.task)
     });
   }
 

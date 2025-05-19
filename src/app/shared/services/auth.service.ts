@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import { Router } from '@angular/router';
 
 export interface User {
   id: number;
@@ -18,8 +18,10 @@ export interface User {
 export interface Task {
   id: number;
   userId: number;
-  title: string;
-  description: string;
+  EmployeeName: string;
+  NameTask: string;
+  condition:string,
+  time:string
 }
 @Injectable({
   providedIn: 'root'
@@ -27,7 +29,7 @@ export interface Task {
 export class AuthService {
 private apiUrl = 'http://localhost:3000/users'
 private apiData = 'http://localhost:3000/tasks?id='
-  constructor(private http:HttpClient ) { }
+  constructor(private http:HttpClient,private router: Router ) { }
 
 
   login(email:string , password:string){
@@ -36,12 +38,23 @@ return this.http.get<any[]>(`${this.apiUrl}?email=${email}&password=${password}`
 )
   }
 
+ logout(): void {
+    localStorage.removeItem('user');
+    this.router.navigate(['/login']);
+  }
+
+  // اختياري: التحقق مما إذا كان المستخدم مسجلاً الدخول
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
+
   registerUser(userData: any) {
     return this.http.post(this.apiUrl, userData);
   }
-  getUsers(id: number): Observable<User[]> {
-    return this.http.get<User[]>(`${this.apiData}${id}`);
-  }
+getTask(id: number): Observable<Task[]> {
+  return this.http.get<Task[]>(`${this.apiData}${id}`);
+}
 
 
 }
