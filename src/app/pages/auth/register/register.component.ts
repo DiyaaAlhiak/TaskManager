@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../shared/services/auth.service';
 import { CommonModule } from '@angular/common';
-import { v4 as uuidv4 } from 'uuid'; // ✅ استيراد uuid
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-register',
