@@ -1,6 +1,6 @@
 <div class="home-container">
   <div class="col-md-12 top-page">
-  <h1 class="text-white">مرحبًا، أحمد 👋</h1>
+  <h1 class="text-white"> {{Name}} 👋</h1>
   <p class="text-white">إليك نظرة سريعة على حال المهام الخاصة بك</p>
   </div>
 
@@ -29,7 +29,7 @@
   <div class="task-today">
     <div class="top-table">
  <h2>مهام اليوم</h2>
-<button class="add-task">اضافة مهامة</button>
+<button class="add-task">اضافة مهامة <i class="fa-solid fa-plus"></i></button>
     </div>
 
     <table>
@@ -44,12 +44,12 @@
       </thead>
       <tbody>
 
-        <tr >
+        <tr *ngFor="let TaskAdmin of task">
 
-          <td></td>
-          <td>قيد التنفيذ</td>
-          <td>10:00 ص</td>
-          <td>10:00 ص</td>
+          <td>{{TaskAdmin.EmployeeName}}</td>
+          <td>{{TaskAdmin.NameTask}}</td>
+          <td>{{TaskAdmin.condition}}</td>
+          <td>{{TaskAdmin.time}}</td>
           <td>dddd</td>
         </tr>
       </tbody>

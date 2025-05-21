@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 1,
-      "firstName": "mhamed",
-      "lastName": "mhamed",
+      "firstName": "محمد",
+      "lastName": "محمد",
       "email": "mohamed77@gmail",
       "mobileNumber": 7345345345,
       "password": "123456",
@@ -11,31 +11,86 @@
       "token": "e9a151ec-6282-4f60-b132-afdfabb239ad"
     }
   ],
-  "tasks": [
-    {
-      "id": 1,
-      "userId": 1,
-      "EmployeeName":"Ashraf",
-      "NameTask":"Task1",
-      "condition":"Activated",
-      "time":"10:00 ص"
-    },
-       {
-      "id": 1,
-      "userId": 1,
-      "EmployeeName":"Ashraf",
-      "NameTask":"Task1",
-      "condition":"Activated",
-      "time":"10:00 ص"
-    },   {
-      "id": 1,
-      "userId": 1,
-      "EmployeeName":"Ashraf",
-      "NameTask":"Task1",
-      "condition":"Activated",
-      "time":"10:00 ص"
-    }
-
-
-  ]
+"tasks": [
+  {
+    "id": 1,
+    "userId": 1,
+    "EmployeeName": "أحمد العلي",
+    "NameTask": "تحديث قاعدة البيانات",
+    "condition": "قيد التنفيذ",
+    "time": "08:30 ص"
+  },
+  {
+    "id": 1,
+    "userId": 1,
+    "EmployeeName": "ليلى حسين",
+    "NameTask": "تصميم واجهة المستخدم",
+    "condition": "لم تبدأ",
+    "time": "09:00 ص"
+  },
+  {
+    "id": 1,
+    "userId": 1,
+    "EmployeeName": "سلمان ناصر",
+    "NameTask": "مراجعة الكود",
+    "condition": "مكتملة",
+    "time": "10:15 ص"
+  },
+  {
+    "id": 1,
+    "userId": 1,
+    "EmployeeName": "نور عبد الله",
+    "NameTask": "إعداد تقرير شهري",
+    "condition": "قيد التنفيذ",
+    "time": "11:00 ص"
+  },
+  {
+    "id": 1,
+    "userId": 1,
+    "EmployeeName": "فهد الدوسري",
+    "NameTask": "تحليل المتطلبات",
+    "condition": "في الانتظار",
+    "time": "12:45 م"
+  },
+  {
+    "id": 1,
+    "userId": 1,
+    "EmployeeName": "ريم خالد",
+    "NameTask": "اختبار النظام",
+    "condition": "قيد التنفيذ",
+    "time": "01:30 م"
+  },
+ {
+    "id": 1,
+    "userId": 1,
+    "EmployeeName": "سارة العتيبي",
+    "NameTask": "مراجعة التقارير",
+    "condition": "قيد التنفيذ",
+    "time": "09:15 ص"
+  },
+  {
+    "id": 1,
+    "userId": 1,
+    "EmployeeName": "خالد الزهراني",
+    "NameTask": "تصميم واجهة المستخدم",
+    "condition": "مكتملة",
+    "time": "11:45 ص"
+  },
+  {
+    "id": 1,
+    "userId":1,
+    "EmployeeName": "ليلى الأحمد",
+    "NameTask": "إدخال البيانات",
+    "condition": "لم تبدأ",
+    "time": "01:00 م"
+  },
+  {
+    "id": 1,
+    "userId": 1,
+    "EmployeeName": "محمد الدوسري",
+    "NameTask": "إعداد العرض التقديمي",
+    "condition": "في الانتظار",
+    "time": "03:30 م"
+  }
+]
 }

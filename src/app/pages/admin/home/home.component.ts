@@ -14,11 +14,19 @@ export class HomeComponent {
 constructor(private _AuthService: AuthService){}
 
 
-
+NemeUser = localStorage.getItem('user')
+ Name: string = '';
   ngOnInit(): void {
-    // this.task
+    const userString = localStorage.getItem('user');
+    if (userString) {
+      const user = JSON.parse(userString);
+      this.Name = `${user.firstName} ${user.lastName}`;
+    }
+
     this.getAllUsers(1);
   }
+
+
 
   getAllUsers(id: number): void {
     this._AuthService.getTask(id).subscribe(res => {
