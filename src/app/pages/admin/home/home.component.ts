@@ -6,18 +6,28 @@ import { CommonModule } from '@angular/common';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
 Tasks: Task[] = [];
 constructor(private _AuthService: AuthService){}
 
 
-
+NemeUser = localStorage.getItem('user')
+ Name: string = '';
   ngOnInit(): void {
+    const userString = localStorage.getItem('user');
+    if (userString) {
+      const user = JSON.parse(userString);
+      this.Name = `${user.firstName} ${user.lastName}`;
+    }
+
     this.getAllUsers(1);
   }
+
+
 
   getAllUsers(id: number): void {
     this._AuthService.getTaskUser(id).subscribe(users => {
