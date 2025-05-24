@@ -16,10 +16,12 @@ export interface User {
 }
 
 export interface Task {
-  id: number;
-  userId: number;
-  title: string;
-  description: string;
+      id: number,
+      userId: number,
+      EmployeeName:string,
+      NameTask:string,
+      condition:string,
+      time:string,
 }
 @Injectable({
   providedIn: 'root'
@@ -39,9 +41,12 @@ return this.http.get<any[]>(`${this.apiUrl}?email=${email}&password=${password}`
   registerUser(userData: any) {
     return this.http.post(this.apiUrl, userData);
   }
-  getUsers(id: number): Observable<User[]> {
-    return this.http.get<User[]>(`${this.apiData}${id}`);
+  getTaskUser(id: number): Observable<Task[]> {
+    return this.http.get<Task[]>(`${this.apiData}${id}`);
   }
+
+
+
 
 
 }

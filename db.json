@@ -17,23 +17,23 @@
       "userId": 1,
       "EmployeeName":"Ashraf",
       "NameTask":"Task1",
-      "condition":"Activated",
+      "condition": true,
       "time":"10:00 ص"
     },
        {
       "id": 1,
       "userId": 1,
-      "EmployeeName":"Ashraf",
-      "NameTask":"Task1",
-      "condition":"Activated",
-      "time":"10:00 ص"
+      "EmployeeName":"mhamed",
+      "NameTask":"Task2",
+      "condition":true,
+      "time":"12:00 ص"
     },   {
       "id": 1,
       "userId": 1,
-      "EmployeeName":"Ashraf",
-      "NameTask":"Task1",
-      "condition":"Activated",
-      "time":"10:00 ص"
+      "EmployeeName":"hamze",
+      "NameTask":"Task13",
+      "condition":false,
+      "time":"11:00 ص"
     }
 
 

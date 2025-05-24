@@ -5,7 +5,7 @@
   </div>
 
 
-  <!-- ✅ بطاقات الإحصائيات -->
+
   <div class="stats-cards">
     <div class="stat-card completed">
       <h3>المكتملة</h3>
@@ -29,7 +29,7 @@
   <div class="task-today">
     <div class="top-table">
  <h2>مهام اليوم</h2>
-<button class="add-task">اضافة مهامة</button>
+<button class="add-task">اضافة مهامة <i class="fa-solid fa-plus"></i></button>
     </div>
 
     <table>
@@ -43,14 +43,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>مراجعة خطة التسويق</td>
-          <td>قيد التنفيذ</td>
-          <td>10:00 ص</td>
-          <td>10:00 ص</td>
-          <td>dddd</td>
+        <tr *ngFor="let TaskUser of Tasks">
+          <td>{{TaskUser.EmployeeName}}</td>
+          <td>{{TaskUser.NameTask}}</td>
+          <td>{{TaskUser.condition}}</td>
+          <td>{{TaskUser.time}}</td>
+          <td>dddd</td> <i class="fas fa-user"></i>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
+
