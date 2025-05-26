@@ -5,6 +5,7 @@ import { RegisterComponent } from './pages/auth/register/register.component';
 import { AuthGuard } from './core/auth.guard';
 import { AdminComponent } from './pages/admin/admin.component';
 import { HomeComponent } from './pages/admin/home/home.component';
+import { UserComponent } from './pages/admin/user/user.component';
 
 
 export const routes: Routes = [
@@ -20,6 +21,10 @@ export const routes: Routes = [
       {
         path:"home",
         component:HomeComponent
+      },
+           {
+        path:"user",
+        component:UserComponent
       }
      ]
     },

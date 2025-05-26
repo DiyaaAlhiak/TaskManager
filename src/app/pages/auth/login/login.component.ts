@@ -24,12 +24,13 @@ constructor(private fb: FormBuilder, private router: Router ,private authService
 }
 
 onSubmit() {
+    const  api ='http://localhost:3000/addUser'
   this.submitted = true;
   if (this.loginForm.invalid) return;
 
   const { email, password } = this.loginForm.value;
 
-  this.authService.login(email!, password!).subscribe(user => {
+  this.authService.login(api,email!, password!).subscribe(user => {
     if (user) {
    localStorage.setItem('user', JSON.stringify(user));
       this.router.navigate(['/admin/home'])

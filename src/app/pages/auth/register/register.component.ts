@@ -31,6 +31,7 @@ export class RegisterComponent {
   }
 
   onSubmit() {
+    const  api ='http://localhost:3000/addUser'
     this.submitted = true;
     if (this.registerForm.invalid) return;
 
@@ -40,7 +41,8 @@ export class RegisterComponent {
       token: uuidv4()       // ✅ توليد Token عشوائي
     };
 
-    this.authService.registerUser(newUser).subscribe({
+    this.authService.registerUser(newUser, api).subscribe({
+
       next: () => {
         this.successMessage = 'تم إنشاء الحساب بنجاح';
         this.errorMessage = '';

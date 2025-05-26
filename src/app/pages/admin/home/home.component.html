@@ -26,33 +26,5 @@
   </div>
 
 
-  <div class="task-today">
-    <div class="top-table">
- <h2>مهام اليوم</h2>
-<button class="add-task">اضافة مهامة <i class="fa-solid fa-plus"></i></button>
-    </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>اسم الموظف</th>
-          <th>المهمة</th>
-          <th>الحالة</th>
-          <th>الوقت</th>
-          <th>الإجراءات</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <tr *ngFor="let TaskAdmin of task">
-
-          <td>{{TaskAdmin.EmployeeName}}</td>
-          <td>{{TaskAdmin.NameTask}}</td>
-          <td>{{TaskAdmin.condition}}</td>
-          <td>{{TaskAdmin.time}}</td>
-          <td>dddd</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
