@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { AuthService,Task,User } from '../../../shared/services/auth.service';
+import { AuthService,Task } from '../../../shared/services/auth.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
   imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']

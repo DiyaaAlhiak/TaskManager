@@ -16,12 +16,12 @@ export interface User {
 }
 
 export interface Task {
-      id: number,
-      userId: number,
-      EmployeeName:string,
-      NameTask:string,
-      condition:string,
-      time:string,
+  id: number;
+  userId: number;
+  EmployeeName: string;
+  NameTask: string;
+  condition:string,
+  time:string
 }
 @Injectable({
   providedIn: 'root'
