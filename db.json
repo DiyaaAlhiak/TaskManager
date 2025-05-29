@@ -4,31 +4,148 @@
       "id": "1",
       "firstName": "Diaa",
       "lastName": "Alhaik",
-      "email": "diaa@gamil.com",
+      "email": "diaa@gmail.com",
       "mobileNumber": "094516672",
       "password": "123456",
       "role": "Admin",
-      "token": "token"
+      "token": "token1"
     },
     {
-      "id": "8a71e556-1323-4d2c-938c-65ea74872a32",
-      "firstName": "Mhamed",
-      "lastName": "لاسم الثاني",
-      "email": "Mhamed@gmail.com",
-      "mobileNumber": 435465675,
-      "password": "12345",
+      "id": "2",
+      "firstName": "Ahmad",
+      "lastName": "Khaled",
+      "email": "ahmad@gmail.com",
+      "mobileNumber": "0987654321",
+      "password": "123456",
+      "role": "Admin",
+      "token": "token2"
+    },
+    {
+      "id": "user1",
+      "firstName": "Ali",
+      "lastName": "Omar",
+      "email": "ali@gmail.com",
+      "mobileNumber": "0912345678",
+      "password": "123456",
       "role": "user",
-      "token": "0188745a-5bac-46f4-a008-94d75aab528a"
+      "token": "user-token-1"
+    },
+    {
+      "id": "user2",
+      "firstName": "Sara",
+      "lastName": "Hassan",
+      "email": "sara@gmail.com",
+      "mobileNumber": "0923456789",
+      "password": "123456",
+      "role": "user",
+      "token": "user-token-2"
+    },
+    {
+      "id": "user3",
+      "firstName": "Maher",
+      "lastName": "Issa",
+      "email": "maher@gmail.com",
+      "mobileNumber": "0934567890",
+      "password": "123456",
+      "role": "user",
+      "token": "user-token-3"
+    },
+    {
+      "id": "user4",
+      "firstName": "Lina",
+      "lastName": "Samir",
+      "email": "lina@gmail.com",
+      "mobileNumber": "0945678901",
+      "password": "123456",
+      "role": "user",
+      "token": "user-token-4"
     }
   ],
-  "addTask":[
+  "employees": [
+
     {
-  "id": "dd",
-  "userId": "number",
-  "EmployeeName": "string",
-  "NameTask": "string",
-  "condition":"string",
-  "time":"string"
+      "id": 1,
+      "userId": "user1",
+      "createdBy": "1",
+      "EmployeeName": "علي عمر",
+      "NameTask": "تحضير تقرير شهري",
+      "condition": "لم تبدأ",
+      "time": "08:00 ص"
+    },
+
+        {
+      "id": 1,
+      "userId": "user1",
+      "createdBy": "1",
+      "EmployeeName": " عمر",
+      "NameTask": "تحضير تقرير شهري",
+      "condition": "لم تبدأ",
+      "time": "08:00 ص"
+    },
+    {
+      "id": 2,
+      "userId": "user1",
+      "createdBy": "1",
+      "EmployeeName": "علي عمر",
+      "NameTask": "تنظيف البيانات",
+      "condition": "قيد التنفيذ",
+      "time": "10:00 ص"
+    },
+    {
+      "id": 3,
+      "userId": "user3",
+      "createdBy": "1",
+      "EmployeeName": "ماهر عيسى",
+      "NameTask": "مراجعة العقود",
+      "condition": "مكتمل",
+      "time": "09:00 ص"
+    },
+    {
+      "id": 4,
+      "userId": "user3",
+      "createdBy": "1",
+      "EmployeeName": "ماهر عيسى",
+      "NameTask": "إعداد خطة المشروع",
+      "condition": "لم تبدأ",
+      "time": "01:00 م"
+    },
+
+
+    {
+      "id": 5,
+      "userId": "user2",
+      "createdBy": "2",
+      "EmployeeName": "سارة حسن",
+      "NameTask": "إعداد عرض تقديمي",
+      "condition": "مكتمل",
+      "time": "09:00 ص"
+    },
+    {
+      "id": 6,
+      "userId": "user2",
+      "createdBy": "2",
+      "EmployeeName": "سارة حسن",
+      "NameTask": "جدولة الاجتماعات",
+      "condition": "لم تبدأ",
+      "time": "11:00 ص"
+    },
+    {
+      "id": 7,
+      "userId": "user4",
+      "createdBy": "2",
+      "EmployeeName": "لينا سمير",
+      "NameTask": "ترجمة مستندات",
+      "condition": "قيد التنفيذ",
+      "time": "12:00 م"
+    },
+    {
+      "id": 8,
+      "userId": "user4",
+      "createdBy": "2",
+      "EmployeeName": "لينا سمير",
+      "NameTask": "كتابة تقرير الإنجاز",
+      "condition": "لم تبدأ",
+      "time": "02:00 م"
     }
   ]
 }

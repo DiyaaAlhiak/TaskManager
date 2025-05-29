@@ -11,22 +11,27 @@ import { CommonModule } from '@angular/common';
 })
 export class UserComponent {
   task: Task[] = [];
-constructor(private _AuthService: AuthService){}
- Role:string = '';
+  ID: string = '';
+  Role: string = '';
+
+  constructor(private _AuthService: AuthService) {}
+
   ngOnInit(): void {
-    // this.getAllUsers(1);
- const userString = localStorage.getItem('user');
+    const userString = localStorage.getItem('user');
     if (userString) {
       const user = JSON.parse(userString);
-         this.Role = `${user.role}`;
-  }
+      this.Role = user.role;
+      this.ID = user.id;
+
+      // ✅ بعد تحميل بيانات المستخدم
+      this.getAllUsers(this.ID);
+    }
   }
 
-
-  // getAllUsers(id: number): void {
-  //   this._AuthService.getTask(id).subscribe(res => {
-  //     this.task = res;
-  //     console.log(this.task)
-  //   });
-  // }
+  getAllUsers(id: string): void {
+    this._AuthService.getTask(id).subscribe(res => {
+      this.task = res;
+      console.log(this.task);
+    });
+  }
 }

@@ -10,7 +10,7 @@
 
     </div>
 
-    <table>
+    <table *ngIf="Role === 'Admin'">
       <thead>
         <tr>
           <th>اسم الموظف</th>
@@ -27,9 +27,14 @@
           <td>{{TaskAdmin.EmployeeName}}</td>
           <td>{{TaskAdmin.NameTask}}</td>
           <td>
-          <span class="bg-success bg-gradient">
-            {{TaskAdmin.condition}}
-          </span>
+        <span [ngClass]="{
+  'status': true,
+  'not-started': TaskAdmin.condition === 'لم تبدأ',
+  'in-progress': TaskAdmin.condition === 'قيد التنفيذ',
+  'completed': TaskAdmin.condition === 'مكتملة'
+}">
+  {{ TaskAdmin.condition }}
+</span>
           </td>
           <td>{{TaskAdmin.time}}</td>
              <td>
@@ -73,6 +78,8 @@ ggggg
 
       </tbody>
     </table>
+
+
   </div>
  </div>
 

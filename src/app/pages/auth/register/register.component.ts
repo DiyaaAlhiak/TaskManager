@@ -37,8 +37,8 @@ export class RegisterComponent {
 
     const newUser = {
       ...this.registerForm.value,
-      id: uuidv4(),         // ✅ توليد ID عشوائي
-      token: uuidv4()       // ✅ توليد Token عشوائي
+      id: uuidv4(),
+      token: uuidv4()
     };
 
     this.authService.registerUser(newUser, api).subscribe({

@@ -28,7 +28,7 @@ export interface Task {
 })
 export class AuthService {
 // private apiUrl = 'http://localhost:3000/Admin';
-// private apiData = 'http://localhost:3000/employees?id='
+private apiData = 'http://localhost:3000/employees?id='
   constructor(private http:HttpClient,private router: Router ) { }
 
 
@@ -52,9 +52,9 @@ login( api: string,email: string, password: string ) {
   registerUser(userData: any , api:string) {
     return this.http.post(api, userData);
   }
-// getTask(id: number): Observable<Task[]> {
-//   return this.http.get<Task[]>(`${this.apiData}${id}`);
-// }
+getTask(id: string): Observable<Task[]> {
+  return this.http.get<Task[]>(`${this.apiData}${id}`);
+}
 
 
 }
