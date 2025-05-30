@@ -1,24 +1,32 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
-import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+// import { Router } from '@angular/router';
+// import { Router } from 'express';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [RouterModule, CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+ constructor(private authService: AuthService) {}
+ Name: string = '';
+ Role:string = '';
+ ngOnInit(): void {
+      const userString = localStorage.getItem('user');
+    if (userString) {
+      const user = JSON.parse(userString);
+      this.Name = `${user.firstName} ${user.lastName}`;
+         this.Role = `${user.role}`;
+    }
+    console.log(this.Role)
+ }
 
-constructor(private _auth:AuthService ,private router: Router ){
-
-}
-
-logout(): void {
-  localStorage.clear(); // يمسح كل البيانات من localStorage
-  sessionStorage.clear(); // إن وجدت بيانات في الجلسة
-  this.router.navigate(['/login']);
-}
-
+    onLogout() {
+    this.authService.logout();
+  }
 }

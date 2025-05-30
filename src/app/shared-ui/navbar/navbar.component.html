@@ -13,15 +13,16 @@
     </div>
     <ul class="dropdown-menu">
       <li><a href="#">الإعدادات</a></li>
-      <li><a href="#" (click)="logout()">تسجيل الخروج</a></li>
+      <li><a href="#" (click)="onLogout()">تسجيل الخروج</a></li>
     </ul>
   </div>
 
   <!-- ✅ روابط التنقل -->
   <ul class="nav-links">
-    <li><a href="#">🏠 الرئيسية</a></li>
-    <li><a href="#">🗂️ المهام</a></li>
-    <li><a href="#">👥 المستخدمين</a></li>
-    <li><a href="#">📊 الإحصائيات</a></li>
+    <li><a href="#" routerLink="/admin/home">🏠 الرئيسية</a></li>
+    <li><a href="#" routerLink="/admin/user">🗂️ المهام</a></li>
+<!-- {{Role}} -->
+
+
   </ul>
 </div>

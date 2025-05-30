@@ -1,96 +1,151 @@
 {
-  "users": [
+  "addUser": [
     {
-      "id": 1,
-      "firstName": "محمد",
-      "lastName": "محمد",
-      "email": "mohamed77@gmail",
-      "mobileNumber": 7345345345,
+      "id": "1",
+      "firstName": "Diaa",
+      "lastName": "Alhaik",
+      "email": "diaa@gmail.com",
+      "mobileNumber": "094516672",
       "password": "123456",
-      "role": "admin",
-      "token": "e9a151ec-6282-4f60-b132-afdfabb239ad"
+      "role": "Admin",
+      "token": "token1"
+    },
+    {
+      "id": "2",
+      "firstName": "Ahmad",
+      "lastName": "Khaled",
+      "email": "ahmad@gmail.com",
+      "mobileNumber": "0987654321",
+      "password": "123456",
+      "role": "Admin",
+      "token": "token2"
+    },
+    {
+      "id": "user1",
+      "firstName": "Ali",
+      "lastName": "Omar",
+      "email": "ali@gmail.com",
+      "mobileNumber": "0912345678",
+      "password": "123456",
+      "role": "user",
+      "token": "user-token-1"
+    },
+    {
+      "id": "user2",
+      "firstName": "Sara",
+      "lastName": "Hassan",
+      "email": "sara@gmail.com",
+      "mobileNumber": "0923456789",
+      "password": "123456",
+      "role": "user",
+      "token": "user-token-2"
+    },
+    {
+      "id": "user3",
+      "firstName": "Maher",
+      "lastName": "Issa",
+      "email": "maher@gmail.com",
+      "mobileNumber": "0934567890",
+      "password": "123456",
+      "role": "user",
+      "token": "user-token-3"
+    },
+    {
+      "id": "user4",
+      "firstName": "Lina",
+      "lastName": "Samir",
+      "email": "lina@gmail.com",
+      "mobileNumber": "0945678901",
+      "password": "123456",
+      "role": "user",
+      "token": "user-token-4"
     }
   ],
-"tasks": [
-  {
-    "id": 1,
-    "userId": 1,
-    "EmployeeName": "أحمد العلي",
-    "NameTask": "تحديث قاعدة البيانات",
-    "condition": "قيد التنفيذ",
-    "time": "08:30 ص"
-  },
-  {
-    "id": 1,
-    "userId": 1,
-    "EmployeeName": "ليلى حسين",
-    "NameTask": "تصميم واجهة المستخدم",
-    "condition": "لم تبدأ",
-    "time": "09:00 ص"
-  },
-  {
-    "id": 1,
-    "userId": 1,
-    "EmployeeName": "سلمان ناصر",
-    "NameTask": "مراجعة الكود",
-    "condition": "مكتملة",
-    "time": "10:15 ص"
-  },
-  {
-    "id": 1,
-    "userId": 1,
-    "EmployeeName": "نور عبد الله",
-    "NameTask": "إعداد تقرير شهري",
-    "condition": "قيد التنفيذ",
-    "time": "11:00 ص"
-  },
-  {
-    "id": 1,
-    "userId": 1,
-    "EmployeeName": "فهد الدوسري",
-    "NameTask": "تحليل المتطلبات",
-    "condition": "في الانتظار",
-    "time": "12:45 م"
-  },
-  {
-    "id": 1,
-    "userId": 1,
-    "EmployeeName": "ريم خالد",
-    "NameTask": "اختبار النظام",
-    "condition": "قيد التنفيذ",
-    "time": "01:30 م"
-  },
- {
-    "id": 1,
-    "userId": 1,
-    "EmployeeName": "سارة العتيبي",
-    "NameTask": "مراجعة التقارير",
-    "condition": "قيد التنفيذ",
-    "time": "09:15 ص"
-  },
-  {
-    "id": 1,
-    "userId": 1,
-    "EmployeeName": "خالد الزهراني",
-    "NameTask": "تصميم واجهة المستخدم",
-    "condition": "مكتملة",
-    "time": "11:45 ص"
-  },
-  {
-    "id": 1,
-    "userId":1,
-    "EmployeeName": "ليلى الأحمد",
-    "NameTask": "إدخال البيانات",
-    "condition": "لم تبدأ",
-    "time": "01:00 م"
-  },
-  {
-    "id": 1,
-    "userId": 1,
-    "EmployeeName": "محمد الدوسري",
-    "NameTask": "إعداد العرض التقديمي",
-    "condition": "في الانتظار",
-    "time": "03:30 م"
-  }
-]
+  "employees": [
+
+    {
+      "id": 1,
+      "userId": "user1",
+      "createdBy": "1",
+      "EmployeeName": "علي عمر",
+      "NameTask": "تحضير تقرير شهري",
+      "condition": "لم تبدأ",
+      "time": "08:00 ص"
+    },
+
+        {
+      "id": 1,
+      "userId": "user1",
+      "createdBy": "1",
+      "EmployeeName": " عمر",
+      "NameTask": "تحضير تقرير شهري",
+      "condition": "لم تبدأ",
+      "time": "08:00 ص"
+    },
+    {
+      "id": 2,
+      "userId": "user1",
+      "createdBy": "1",
+      "EmployeeName": "علي عمر",
+      "NameTask": "تنظيف البيانات",
+      "condition": "قيد التنفيذ",
+      "time": "10:00 ص"
+    },
+    {
+      "id": 3,
+      "userId": "user3",
+      "createdBy": "1",
+      "EmployeeName": "ماهر عيسى",
+      "NameTask": "مراجعة العقود",
+      "condition": "مكتمل",
+      "time": "09:00 ص"
+    },
+    {
+      "id": 4,
+      "userId": "user3",
+      "createdBy": "1",
+      "EmployeeName": "ماهر عيسى",
+      "NameTask": "إعداد خطة المشروع",
+      "condition": "لم تبدأ",
+      "time": "01:00 م"
+    },
+
+
+    {
+      "id": 5,
+      "userId": "user2",
+      "createdBy": "2",
+      "EmployeeName": "سارة حسن",
+      "NameTask": "إعداد عرض تقديمي",
+      "condition": "مكتمل",
+      "time": "09:00 ص"
+    },
+    {
+      "id": 6,
+      "userId": "user2",
+      "createdBy": "2",
+      "EmployeeName": "سارة حسن",
+      "NameTask": "جدولة الاجتماعات",
+      "condition": "لم تبدأ",
+      "time": "11:00 ص"
+    },
+    {
+      "id": 7,
+      "userId": "user4",
+      "createdBy": "2",
+      "EmployeeName": "لينا سمير",
+      "NameTask": "ترجمة مستندات",
+      "condition": "قيد التنفيذ",
+      "time": "12:00 م"
+    },
+    {
+      "id": 8,
+      "userId": "user4",
+      "createdBy": "2",
+      "EmployeeName": "لينا سمير",
+      "NameTask": "كتابة تقرير الإنجاز",
+      "condition": "لم تبدأ",
+      "time": "02:00 م"
+    }
+  ]
 }

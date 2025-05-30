@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService,Task,User } from '../../../shared/services/auth.service';
+import { AuthService,Task } from '../../../shared/services/auth.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,8 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-Tasks: Task[] = [];
-constructor(private _AuthService: AuthService){}
+  task: Task[] = [];
+
 
 
 NemeUser = localStorage.getItem('user')
@@ -24,17 +24,12 @@ NemeUser = localStorage.getItem('user')
       this.Name = `${user.firstName} ${user.lastName}`;
     }
 
-    this.getAllUsers(1);
+
   }
 
 
 
-  getAllUsers(id: number): void {
-    this._AuthService.getTaskUser(id).subscribe(users => {
-      this.Tasks = users;
-      console.log(this.Tasks)
-    });
-  }
+
 
 
 }

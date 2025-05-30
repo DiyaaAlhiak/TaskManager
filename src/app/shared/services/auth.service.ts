@@ -16,27 +16,27 @@ export interface User {
 }
 
 export interface Task {
-      id: number,
-      userId: number,
-      EmployeeName:string,
-      NameTask:string,
-      condition:string,
-      time:string,
+  id: number;
+  userId: number;
+  EmployeeName: string;
+  NameTask: string;
+  condition:string,
+  time:string
 }
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-private apiUrl = 'http://localhost:3000/users'
-private apiData = 'http://localhost:3000/tasks?id='
+// private apiUrl = 'http://localhost:3000/Admin';
+private apiData = 'http://localhost:3000/employees?id='
   constructor(private http:HttpClient,private router: Router ) { }
 
 
-  login(email:string , password:string){
-return this.http.get<any[]>(`${this.apiUrl}?email=${email}&password=${password}`).pipe(
-  map(users => users.length ? users[0] : null)
-)
-  }
+login( api: string,email: string, password: string ) {
+  return this.http.get<any[]>(`${api}?email=${email}&password=${password}`).pipe(
+    map(users => users.length ? users[0] : null)
+  );
+}
 
  logout(): void {
     localStorage.removeItem('user');
@@ -49,15 +49,12 @@ return this.http.get<any[]>(`${this.apiUrl}?email=${email}&password=${password}`
   }
 
 
-  registerUser(userData: any) {
-    return this.http.post(this.apiUrl, userData);
+  registerUser(userData: any , api:string) {
+    return this.http.post(api, userData);
   }
-  getTaskUser(id: number): Observable<Task[]> {
-    return this.http.get<Task[]>(`${this.apiData}${id}`);
-  }
-
-
-
+getTask(id: string): Observable<Task[]> {
+  return this.http.get<Task[]>(`${this.apiData}${id}`);
+}
 
 
 }

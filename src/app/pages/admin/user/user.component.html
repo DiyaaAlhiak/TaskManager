@@ -1,0 +1,85 @@
+
+<hr>
+ <div class="user-continer">
+
+ <div class="task-today">
+    <div class="top-table">
+ <h2>مهام اليوم</h2>
+
+   <button *ngIf="Role === 'Admin'" class="add-task">اضافة مهامة <i class="fa-solid fa-plus"></i></button>
+
+    </div>
+
+    <table *ngIf="Role === 'Admin'">
+      <thead>
+        <tr>
+          <th>اسم الموظف</th>
+          <th>المهمة</th>
+          <th>الحالة</th>
+          <th>الوقت</th>
+          <th>الإجراءات</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let TaskAdmin of task">
+
+          <td>{{TaskAdmin.EmployeeName}}</td>
+          <td>{{TaskAdmin.NameTask}}</td>
+          <td>
+        <span [ngClass]="{
+  'status': true,
+  'not-started': TaskAdmin.condition === 'لم تبدأ',
+  'in-progress': TaskAdmin.condition === 'قيد التنفيذ',
+  'completed': TaskAdmin.condition === 'مكتملة'
+}">
+  {{ TaskAdmin.condition }}
+</span>
+          </td>
+          <td>{{TaskAdmin.time}}</td>
+             <td>
+          <button
+            class="nav-link dropdown-toggle w-100"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-ellipsis"></i>
+          </button>
+
+          <ul class="dropdown-menu text-start">
+            <li class="d-flex">
+              <button class="dropdown-item">
+ffff
+              </button>
+            </li>
+
+            <li class="d-flex">
+              <button  class="dropdown-item">
+ggggggg
+              </button>
+            </li>
+
+            <li class="d-flex">
+
+              <button class="dropdown-item" >
+ggggg
+              </button>
+            </li>
+     <li class="d-flex">
+
+              <button class="dropdown-item" >
+ggggg
+              </button>
+            </li>
+          </ul>
+        </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+  </div>
+ </div>
+
