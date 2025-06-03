@@ -45,8 +45,8 @@
 <div class="col-md-6 mb-2">
   <label>نوع المستخدم</label>
   <select formControlName="role">
-    <option value="user">مستخدم</option>
     <option value="admin">مدير</option>
+    <option value="user">مستخدم</option>
   </select>
   <div class="text-danger" *ngIf="submitted && registerForm.get('role')?.errors">
     نوع المستخدم مطلوب

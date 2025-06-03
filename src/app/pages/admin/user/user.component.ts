@@ -1,37 +1,39 @@
 import { Component } from '@angular/core';
 import { AuthService, Task } from '../../../shared/services/auth.service';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })
 export class UserComponent {
-  task: Task[] = [];
-  ID: string = '';
-  Role: string = '';
-
+task:Task[]=[]
+Role = ''
   constructor(private _AuthService: AuthService) {}
 
   ngOnInit(): void {
+this.getRole()
+this.getTask()
+  }
+
+getTask(){
+ const api ='http://localhost:3000/employees'
+ this._AuthService.getAllTasks(api).subscribe(res =>{
+  this.task = res
+
+ })
+}
+getRole(){
     const userString = localStorage.getItem('user');
     if (userString) {
       const user = JSON.parse(userString);
-      this.Role = user.role;
-      this.ID = user.id;
-
-      // ✅ بعد تحميل بيانات المستخدم
-      this.getAllUsers(this.ID);
+      this.Role = `${user.role}`;
     }
-  }
 
-  getAllUsers(id: string): void {
-    this._AuthService.getTask(id).subscribe(res => {
-      this.task = res;
-      console.log(this.task);
-    });
-  }
+
+}
 }
