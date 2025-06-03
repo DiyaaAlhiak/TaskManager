@@ -1,7 +1,6 @@
 <div class="add-container">
   <div class="task-container">
     <h2>إضافة مهمة جديدة</h2>
-    {{taskForm.value | json}}
     <form [formGroup]="taskForm" (ngSubmit)="submitTask()">
       <div class="row">
       <div class="form-group">
