@@ -1,112 +1,138 @@
 
-  .add-container {
-    padding: 40px;
-    // background-color: #f9fafc;
-    direction: rtl;
-    min-height: 100vh;
-    margin-right: 205px;
-  }
+.add-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 2rem;
+}
 
-  .task-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(62, 54, 123, 0.1);
-    font-family: 'Arial', sans-serif;
-  }
 
-  h2 {
-    color: #3e367b;
-    text-align: center;
-    margin-bottom: 24px;
-  }
+.glass-box {
+  width: 100%;
+  margin-right: 19rem;
+  max-width: 950px;
+  background-color: rgba(189, 189, 189, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 3rem;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease forwards;
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
 
+.glass-box h2 {
+  font-size: 28px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #3e367b;
+}
+
+
+.glass-input,
+.glass-select,
+.glass-textarea {
+  width: 100%;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgb(61, 61, 61);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.glass-input:focus,
+.glass-select:focus,
+.glass-textarea:focus {
+  outline: none;
+  box-shadow: none;
+ border: 1px solid #3e367b;
+}
+
+.glass-input::placeholder,
+.glass-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+label{
+color: #3e367b;
+font-weight: bold;
+}
+
+
+button[type="submit"] {
+background: linear-gradient(135deg, #8141ff, #235da8);
+  border: none;
+  color: #fff;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+background: linear-gradient(135deg,#235da8 ,   #8141ff);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(65, 163, 255, 0.5);
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  flex: 1 1 100%;
+}
+
+
+.form-check {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
   .row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   .form-group {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
+    flex: 1 1 100%;
   }
 
-  .full-width {
-    flex: 100%;
+  .glass-box {
+    padding: 2rem;
   }
-
-  label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #3e367b;
-    font-size: 1rem;
-  }
-
-  input[type="text"],
-  input[type="time"],
-  input[type="file"],
-  select,
-  textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-
-  input:focus,
-  select:focus,
-  textarea:focus {
-    border-color: #3e367b;
-    outline: none;
-  }
-
-.form-check {
-width: 8%;
-font-size: 20px;
 }
-
-  button {
-    background-color: #3e367b;
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-  }
-
-  button:hover {
-    background-color: #2d2960;
-  }
-
-  .image-preview {
-    margin-top: 1rem;
-    border: 1px dashed #3e367b;
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    background-color: #f9f9f9;
-  }
-
-  .image-preview img {
-    border-radius: 6px;
-    max-width: 100px;
-    height: auto;
-  }
-

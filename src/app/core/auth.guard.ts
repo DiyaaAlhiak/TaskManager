@@ -17,12 +17,12 @@ export class AuthGuard implements CanActivate {
       return false;
     }
 
-    // إذا لم يكن هناك توكن، يسمح بالوصول إلى صفحة home
+
     if (route.routeConfig?.path === 'admin' && !user) {
-      this.router.navigate(['/login']); // إذا لا يوجد توكن، إعادة توجيه إلى صفحة login
+      this.router.navigate(['/login']);
       return false;
     }
 
-    return true; // للسماح بالوصول إلى المسار في الحالات الأخرى
+    return true;
   }
 }

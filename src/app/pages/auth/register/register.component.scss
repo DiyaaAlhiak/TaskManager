@@ -1,3 +1,39 @@
+// =================== الأنيميشن الأساسي ===================
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// =================== التصميم ===================
 .login-page {
   background-image: url('../../../../../public/imgs/Task-management-software-for-employees.webp');
   background-size: cover;
@@ -11,33 +47,56 @@
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
-  // border-radius: 10px;
-
   width: 100%;
-  height: 106.5vh;
+  height: 100vh;
 }
 
 .login-box {
   width: 70%;
-  // max-width: 400px;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(2px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
-  margin: 3rem auto ;
-  // height: 90vh;
-}
-.btn-submit{
-  background: #251e57;
-  color: #f7f7f7;
-
-
+  margin: 3rem auto;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-.btn-submit:hover{
-  background: #3e367b;
+// حقول الإدخال
+.login-box input,
+.login-box select,
+.login-box button {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: 0.6s;
+  transition: all 0.3s ease;
 }
 
+// التأثير عند التركيز
+input:focus,
+select:focus {
+  border-color: #3e367b;
+  box-shadow: 0 0 5px rgba(62, 54, 123, 0.5);
+}
+
+// زر الإرسال
+.btn-submit {
+  background: linear-gradient(135deg, #5a4bff, #3f2ca4);
+  border: none;
+  color: #fff;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #7e69ff, #5e49d4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(94, 73, 212, 0.5);
+}
+
+// رسائل التنبيه
 .fade-out {
   opacity: 0;
   transition: opacity 0.5s ease-out;
@@ -46,10 +105,9 @@
 .swit-alert-error-message,
 .swit-alert-scss-message {
   position: fixed;
-  top:27rem;
+  top: 27rem;
   right: 20px;
   z-index: 1000;
-
   width: auto;
   max-width: 300px;
   color: #ffffff;
@@ -62,22 +120,22 @@
   text-align: right;
   transition: opacity 0.5s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeSlide 0.7s ease forwards;
 }
 
 .swit-alert-error-message {
-  background-color: #f34728; /* أحمر فاتح */
+  background-color: #f34728;
   border: 1px solid #f34728;
 }
 
-.swit-alert-scss-message{
-  background-color: #3e367b; /* أحمر فاتح */
+.swit-alert-scss-message {
+  background-color: #3e367b;
   border: 1px solid #3e367b;
-
 }
-select {
-  width: 100%;
-  padding: 0.4rem;
-  margin: 0.5rem 0 1rem 0;
+
+// مظهر القائمة المنسدلة
+select.form-select {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #242424;
   border: 1px solid #ccc;
-  border-radius: 6px;
 }

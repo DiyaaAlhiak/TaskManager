@@ -1,15 +1,14 @@
 
-<hr>
- <div class="user-continer">
-
- <div class="task-today">
+<div class="user-container mt-5">
+  <div class="task-today">
     <div class="top-table">
- <h2>مهام اليوم</h2>
-
-   <button *ngIf="Role === 'admin'" routerLink="addTask"  class="add-task">اضافة مهامة <i class="fa-solid fa-plus"></i></button>
-
+      <h2>مهام اليوم</h2>
+      <button *ngIf="Role === 'admin'" routerLink="addTask" class="add-task">
+        إضافة مهمة <i class="fa-solid fa-plus"></i>
+      </button>
     </div>
 
+    <!-- جدول المشرف -->
     <table *ngIf="Role === 'admin'">
       <thead>
         <tr>
@@ -17,74 +16,48 @@
           <th>المهمة</th>
           <th>تفعيل</th>
           <th>نوع المهمة</th>
+          <th>حالة المهمة</th>
           <th>الوقت</th>
           <th>الإجراءات</th>
         </tr>
       </thead>
       <tbody>
-
-        <tr *ngFor="let TaskAdmin of task">
-
-          <td>{{TaskAdmin.EmployeeName}}</td>
-          <td>{{TaskAdmin.NameTask}}</td>
-          <td><div class="form-check form-switch">
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-
-</div></td>
+        <tr *ngFor="let TaskAdmin of task()">
+          <td>{{ TaskAdmin.EmployeeName }}</td>
+          <td>{{ TaskAdmin.NameTask }}</td>
           <td>
-        <span [ngClass]="{
-  'status': true,
-  'not-started': TaskAdmin.TaskType === 'المهام المتراكمة',
-  'in-progress': TaskAdmin.TaskType === 'مهمة' ,
-  'completed': TaskAdmin.TaskType === 'مكتملة'
-}">
-  {{ TaskAdmin.TaskType }}
-</span>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" [checked]="TaskAdmin.activation" (change)="toggleActivation(TaskAdmin, $event)">
+            </div>
           </td>
-          <td>{{TaskAdmin.time}}</td>
-             <td>
-          <button
-            class="nav-link dropdown-toggle w-100"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="fa-solid fa-ellipsis"></i>
-          </button>
-
-          <ul class="dropdown-menu text-start">
-            <li class="d-flex">
-              <button class="dropdown-item">
-ffff
-              </button>
-            </li>
-
-            <li class="d-flex">
-              <button  class="dropdown-item">
-ggggggg
-              </button>
-            </li>
-
-            <li class="d-flex">
-
-              <button class="dropdown-item" >
-ggggg
-              </button>
-            </li>
-     <li class="d-flex">
-
-              <button class="dropdown-item" >
-ggggg
-              </button>
-            </li>
-          </ul>
-        </td>
+          <td>
+            <span [ngClass]="{
+              'status': true,
+              'not-started': TaskAdmin.TaskType === 'المهام المتراكمة',
+              'in-progress': TaskAdmin.TaskType === 'مهمة',
+              'completed': TaskAdmin.TaskType === 'مكتملة'
+            }">
+              {{ TaskAdmin.TaskType }}
+            </span>
+          </td>
+          <td>حالة المهمة</td>
+          <td>{{ TaskAdmin.time }}</td>
+          <td>
+            <button class="nav-link dropdown-toggle w-100" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-ellipsis"></i>
+            </button>
+            <ul class="dropdown-menu text-start">
+              <li><button class="dropdown-item" routerLink="Detils">عرض</button></li>
+              <li><button class="dropdown-item">تعديل</button></li>
+              <li><button class="dropdown-item" (click)="DeletTask(TaskAdmin.id)">حذف</button></li>
+            </ul>
+          </td>
         </tr>
-
       </tbody>
     </table>
 
-      <table *ngIf="Role === 'user'">
+    <!-- جدول المستخدم العادي -->
+    <table *ngIf="Role === 'user'">
       <thead>
         <tr>
           <th>المهمة</th>
@@ -94,62 +67,32 @@ ggggg
         </tr>
       </thead>
       <tbody>
-
-        <tr *ngFor="let TaskAdmin of task">
-          <td>{{TaskAdmin.NameTask}}</td>
+        <tr *ngFor="let TaskAdmin of task()">
+          <td>{{ TaskAdmin.NameTask }}</td>
           <td>
-        <span [ngClass]="{
-  'status': true,
-  'not-started': TaskAdmin.TaskType === 'المهام المتراكمة',
-  'in-progress': TaskAdmin.TaskType === ' التنفيذ',
-  'completed': TaskAdmin.TaskType === 'مكتملة'
-}">
-  {{ TaskAdmin.TaskType }}
-</span>
+            <span [ngClass]="{
+              'status': true,
+              'not-started': TaskAdmin.TaskType === 'المهام المتراكمة',
+              'in-progress': TaskAdmin.TaskType === 'التنفيذ',
+              'completed': TaskAdmin.TaskType === 'مكتملة'
+            }">
+              {{ TaskAdmin.TaskType }}
+            </span>
           </td>
-          <td>{{TaskAdmin.time}}</td>
-             <td>
-          <button
-            class="nav-link dropdown-toggle w-100"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="fa-solid fa-ellipsis"></i>
-          </button>
-
-          <ul class="dropdown-menu text-start">
-            <li class="d-flex">
-              <button class="dropdown-item">
-ffff
-              </button>
-            </li>
-
-            <li class="d-flex">
-              <button  class="dropdown-item">
-ggggggg
-              </button>
-            </li>
-
-            <li class="d-flex">
-
-              <button class="dropdown-item" >
-ggggg
-              </button>
-            </li>
-     <li class="d-flex">
-
-              <button class="dropdown-item" >
-ggggg
-              </button>
-            </li>
-          </ul>
-        </td>
+          <td>{{ TaskAdmin.time }}</td>
+          <td>
+            <button class="nav-link dropdown-toggle w-100" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-ellipsis"></i>
+            </button>
+            <ul class="dropdown-menu text-start">
+              <li><button class="dropdown-item">عرض</button></li>
+              <li><button class="dropdown-item">تعديل</button></li>
+              <li><button class="dropdown-item">حذف</button></li>
+              <li><button class="dropdown-item">أخرى</button></li>
+            </ul>
+          </td>
         </tr>
-
       </tbody>
     </table>
-
   </div>
- </div>
-
+</div>

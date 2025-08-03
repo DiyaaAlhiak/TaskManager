@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService, Task, User } from '../../../../shared/services/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-task',
   standalone: true,
@@ -14,9 +14,11 @@ export class AddTaskComponent implements OnInit {
 
   taskForm!: FormGroup;
   Users: User[] = [];
- adminId: string | null = null;  // بدل number
+ adminId: string | null = null;
 
-  constructor(private _AuthService: AuthService, private fb: FormBuilder) {}
+  constructor( private fb: FormBuilder,
+       private _AuthService: AuthService,
+  private router: Router) {}
 
   ngOnInit(): void {
 const userData = localStorage.getItem('user');
@@ -69,6 +71,7 @@ valueChanges(){
         res => {
           console.log('✅ تمت إضافة المهمة بنجاح:', res);
           this.taskForm.reset();
+            this.router.navigate(['/admin/user']);
         },
         err => {
           console.error('❌ حدث خطأ أثناء إضافة المهمة:', err);

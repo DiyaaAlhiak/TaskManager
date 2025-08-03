@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-  direction: rtl;
-  text-align: right;
+direction: rtl;
+text-align: right;
 font-family: 'Cairo', sans-serif;
+background-color: #434343cc !important;
 }
 a {
     color:#251e57;
@@ -10,3 +11,6 @@ a {
     font-size: 15px;
         font-weight: bold;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

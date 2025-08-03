@@ -6,6 +6,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { HomeComponent } from './pages/admin/home/home.component';
 import { UserComponent } from './pages/admin/user/user.component';
 import { AddTaskComponent } from './pages/admin/user/add-task/add-task.component';
+import { DetailsComponent } from './pages/admin/user/details/details.component';
 
 export const routes: Routes = [
   {
@@ -42,6 +43,10 @@ export const routes: Routes = [
           {
             path: 'addTask',
             component: AddTaskComponent
+          },
+                {
+            path: 'Detils',
+            component: DetailsComponent
           }
         ]
       }

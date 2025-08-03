@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService,Task } from '../../../shared/services/auth.service';
 import { CommonModule } from '@angular/common';
-
+import { signal, computed, effect } from '@angular/core';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent {
   task: Task[] = [];
+
 
 
 
@@ -27,6 +28,14 @@ NemeUser = localStorage.getItem('user')
 
   }
 
+// handleInput(event: Event) {
+//   const input = event.target as HTMLInputElement;
+//   this.inputText.set(input.value);
+// }
+
+// inputText = signal('');
+
+// isSubmitDisabled = computed(() => this.inputText().length < 3);
 
 
 

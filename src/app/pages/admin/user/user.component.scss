@@ -1,72 +1,68 @@
-/* الحاوية العامة */
-.user-continer {
-  padding: 40px;
-  direction: rtl;
-  margin-right: 260px;
-  background-color: #f9fafc;
-  min-height: 100vh;
+.user-container {
+    padding: 40px;
+    margin-right: 22%;
+    direction: rtl;
+    min-height: 100vh;
+    border-radius: 10px;
+    width: 84%;
 }
 
-/* شريط العنوان */
-.top-bar {
-  background-color: #3e367b;
-  color: #fff;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 20px;
-}
-
-/* عنوان القسم */
-.task-today h2 {
+.top-table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 15px;
+  color: white;
 }
 
-/* الزر لإضافة المهام */
 .add-task {
-  background-color: #3e367b;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
   color: #fff;
-  border-radius: 8px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 8px 16px;
+  border-radius: 12px;
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 6px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .add-task:hover {
-  background-color: #5a4ca7;
-  transform: translateY(-2px);
+   background: rgba(0, 0, 0, 0.221);
+  transform: translateY(-1px);
 }
 
 /* جدول المهام */
 .task-today table {
   width: 100%;
   border-collapse: collapse;
-  background-color: white;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  color: #ffffff;
 }
 
-.task-today th {
-  padding: 12px 16px;
-  text-align: right;
-  background-color: #3e367b !important;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1rem;
-  border-bottom: 1px solid #eee;
-}
-
+.task-today th,
 .task-today td {
   padding: 12px 16px;
   text-align: right;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.task-today th {
+   background:  rgba(0, 0, 0, 0.4);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.task-today td {
   font-size: 0.95rem;
-  border-bottom: 1px solid #eee;
-  vertical-align: middle;
+  color: #4f4e4e;
+      background: #fdfdfd;
 }
 
 .task-today tr:last-child td {
@@ -74,12 +70,12 @@
 }
 
 .task-today tbody tr:hover {
-  background-color: #f0f0f5;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* تنسيق الحالات */
+/* حالات المهمة */
 .status {
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 6px;
   font-weight: bold;
   font-size: 0.875rem;
@@ -87,25 +83,18 @@
 }
 
 .status.not-started {
-  background-color: #fff3cd;
+  background-color: rgba(255, 243, 205, 0.6);
   color: #856404;
 }
 
 .status.in-progress {
-  background-color: #d1ecf1;
+  background-color: rgba(209, 236, 241, 0.6);
   color: #0c5460;
 }
 
 .status.completed {
-  background-color: #d4edda;
+  background-color: rgba(212, 237, 218, 0.6);
   color: #155724;
-}
-
-/* رأس الجدول */
-.top-table {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
 }
 
 /* القائمة المنسدلة */
@@ -113,29 +102,23 @@
   display: none;
 }
 
-.dropdown-toggle {
-  box-shadow: none !important;
-}
-
 .dropdown-menu.show {
-  padding-block: 0;
-  border-radius: 6px;
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
-  background: #fafafa;
-  border: 1px solid #e1e5e5;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
 }
 
 button.dropdown-item {
-  padding: 0.5625rem 0.75rem 0.5625rem 0rem;
-  gap: 0.375rem;
-  text-align: start;
-  transition: background-color 0.3s ease;
-}
-
-button.dropdown-item:not(:last-child) {
-  border-bottom: 1px solid #e1e5e5;
+  padding: 10px 15px;
+  font-size: 0.875rem;
+  color: #3e367b;
 }
 
 button.dropdown-item:hover {
-  background-color: #eee;
+  background-color: #000000;
+}
+.dropdown-toggle i {
+  font-size: 1.2rem;
+  color: #333;
 }

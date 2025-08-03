@@ -1,66 +1,54 @@
-<div class="add-container">
-  <div class="task-container">
+<div class="add-page">
+  <div class="glass-box">
     <h2>إضافة مهمة جديدة</h2>
     <form [formGroup]="taskForm" (ngSubmit)="submitTask()">
       <div class="row">
-      <div class="form-group">
-  <label for="userId">اسم الموظف</label>
-  <select formControlName="EmployeeName" id="userId">
-    <option value="" disabled selected>اختر موظفاً</option>
-    <option *ngFor="let user of Users" [value]="user.lastName">
-      {{ user.firstName }} {{ user.lastName }}
-    </option>
-  </select>
-</div>
+        <div class="form-group">
+          <label for="userId">اسم الموظف</label>
+          <select class="glass-select" formControlName="EmployeeName" id="userId">
+            <option value="" disabled selected>اختر موظفاً</option>
+            <option *ngFor="let user of Users" [value]="user.lastName">
+              {{ user.firstName }} {{ user.lastName }}
+            </option>
+          </select>
+        </div>
 
         <div class="form-group">
           <label for="NameTask">عنوان المهمة</label>
-          <input type="text" id="NameTask" formControlName="NameTask" placeholder="مثل: تحضير تقرير شهري" />
+          <input class="glass-input" type="text" id="NameTask" formControlName="NameTask" placeholder="مثل: تحضير تقرير شهري" />
         </div>
       </div>
 
       <div class="row">
         <div class="form-group">
           <label for="condition">نوع المهمة</label>
-          <select formControlName="TaskType" id="condition">
+          <select class="glass-select" formControlName="TaskType" id="condition">
             <option value="" disabled selected>اختر النوع</option>
-            <option > المهام المتراكمة</option>
-            <option >مهمة</option>
+            <option>المهام المتراكمة</option>
+            <option>مهمة</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="time">الوقت</label>
-          <input type="time" id="time" formControlName="time" />
+          <input class="glass-input" type="time" id="time" formControlName="time" />
         </div>
       </div>
-
-
 
       <div class="row">
         <div class="form-group full-width">
           <label for="description">ملاحظات</label>
-          <textarea id="description" formControlName="description" rows="4" placeholder="اترك تعليقاً هنا..."></textarea>
+          <textarea class="glass-textarea" id="description" formControlName="description" rows="4" placeholder="اترك تعليقاً هنا..."></textarea>
         </div>
       </div>
 
-      <!-- <div class="form-group full-width">
-        <label for="images">إرفاق صور المهمة</label>
-        <input type="file" id="images"  multiple />
+      <div class="form-check">
+        <input class="form-check-input" formControlName="activation" type="checkbox" id="flexCheckChecked" checked>
+        <label class="form-check-label fs-5 mx-4" for="flexCheckChecked">
+          تفعيل
+        </label>
+      </div>
 
-        <div class="image-preview" >
-          <div >
-            <img  alt="preview" width="100" style="margin: 5px;" />
-          </div>
-        </div>
-      </div> -->
-
-<div class="form-check">
-  <input class="form-check-input" formControlName="activation" type="checkbox" id="flexCheckChecked" checked>
-  <label class="form-check-label fs-5" for="flexCheckChecked">
-    تفعيل
-  </label>
-</div>
       <button type="submit">إضافة المهمة</button>
     </form>
   </div>

@@ -24,40 +24,44 @@ constructor(private fb: FormBuilder, private router: Router ,private authService
 }
 
 onSubmit() {
-    const  api ='http://localhost:3000/addUser'
+  const api = 'http://localhost:3000/addUser';
   this.submitted = true;
+
   if (this.loginForm.invalid) return;
 
   const { email, password } = this.loginForm.value;
 
-  this.authService.login(api,email!, password!).subscribe(user => {
+  this.authService.login(api, email!, password!).subscribe(user => {
     if (user) {
-   localStorage.setItem('user', JSON.stringify(user));
-      this.router.navigate(['/admin/home'])
-this.ScssMessage = 'تم تسجيل الدخول بنجاح';
+      localStorage.setItem('user', JSON.stringify(user));
+      this.ScssMessage = 'تم تسجيل الدخول بنجاح';
+      this.fadeOut = false;
 
-setTimeout(() => {
-  this.fadeOut = true;
-}, 4500);
+      // ✅ أولاً تظهر الرسالة
+      setTimeout(() => {
+        this.fadeOut = true;
+      }, 2000); // fade out بعد ثانيتين
 
-setTimeout(() => {
-  this.ScssMessage = '';
- this.fadeOut = false;
-}, 5000);
+      // ✅ بعد 2.5 ثانية مثلاً، انتقل لصفحة الـ Admin
+      setTimeout(() => {
+        this.ScssMessage = '';
+        this.fadeOut = false;
+        this.router.navigate(['/admin/home']);
+      }, 2500);
+    } else {
+      this.errorMessage = 'البريد الإلكتروني أو كلمة المرور غير صحيحة';
+      this.fadeOut = false;
 
-    }    else {
-       this.errorMessage = 'البريد الإلكتروني أو كلمة المرور غير صحيحة';
- this.fadeOut = false;
+      setTimeout(() => {
+        this.fadeOut = true;
+      }, 4500);
 
- setTimeout(() => {
-   this.fadeOut = true;
- }, 4500);
-
- setTimeout(() => {
-   this.errorMessage = '';
-  this.fadeOut = false;
- }, 5000);
-     }
+      setTimeout(() => {
+        this.errorMessage = '';
+        this.fadeOut = false;
+      }, 5000);
+    }
   });
 }
+
 }

@@ -70,4 +70,10 @@ getEmployees(apiUrl:string){
   addTask(apiUrl:string,taskData: any) {
     return this.http.post(apiUrl, taskData);
   }
+  updateTask(url: string, task: any) {
+  return this.http.patch(url, { activation: task.activation });
+}
+DeletTask(apiUrl:string, id: string){
+return this.http.delete<Task[]>(`${apiUrl}/${id}`);
+}
 }

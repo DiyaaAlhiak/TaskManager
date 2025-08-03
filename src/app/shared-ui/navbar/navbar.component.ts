@@ -16,6 +16,8 @@ export class NavbarComponent {
  constructor(private authService: AuthService) {}
  Name: string = '';
  Role:string = '';
+ dropdownOpen = false;
+sidebarOpen = true;
  ngOnInit(): void {
       const userString = localStorage.getItem('user');
     if (userString) {
@@ -25,6 +27,18 @@ export class NavbarComponent {
     }
     console.log(this.Role)
  }
+
+
+
+toggleDropdown() {
+  this.dropdownOpen = !this.dropdownOpen;
+}
+
+toggleSidebar() {
+  this.sidebarOpen = !this.sidebarOpen;
+}
+
+
 
     onLogout() {
     this.authService.logout();
